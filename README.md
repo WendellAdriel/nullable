@@ -13,36 +13,36 @@ Helps you convert every SQL [nullable](https://www.w3schools.com/sql/sql_null_va
 ## Features
 - 100% [GORM](https://gorm.io/) support
 - Can be marshalled into JSON
-- Can be unmarshal from JSON
+- Can be unmarshalled from JSON
 - Convenient Set/Get operation
 - Support MySQL, MariaDB, SQLite, and PostgreSQL
-- Zero configuration, just use it as normal data type.
-- Heavily tested! So you don't have to worry of many bugs :D
+- Zero configuration, just use it as a normal data type.
+- Heavily tested! So you don't have to worry about many bugs :D
 
 ## Supported Data Types
-- bool
-- byte
-- string
-- time.Time (capable of handling `DATETIME`, `TIME`, `DATE`, and `TIMESTAMP`)
-- []byte
-- float32
-- float64
-- int
-- int8
-- int16
-- int32
-- int64
-- uint
-- uint8
-- uint16
-- uint32
-- uint64
+- `bool`
+- `byte`
+- `string`
+- `time.Time` (capable of handling `DATETIME`, `TIME`, `DATE`, and `TIMESTAMP`)
+- `[]byte`
+- `float32`
+- `float64`
+- `int`
+- `int8`
+- `int16`
+- `int32`
+- `int64`
+- `uint`
+- `uint8`
+- `uint16`
+- `uint32`
+- `uint64`
 
-**WARNING:** PostgreSQL [won't support any form of unsigned integers](https://www.postgresql.org/message-id/CAEcSYX+Arn7y4FeYPp6ZgbiiiMfZYmsn9aUyotZB-MA1n5hTOw@mail.gmail.com). However, you still able to use any uint variants with a drawback: **they will be stored in form of raw binary instead of normal integer**. Thus, PostgreSQL-side uint comparation is impossible, you have to compare them in your Go application. MySQL, MariaDB, and SQLite won't affected by this issue, don't worry.
+**WARNING:** PostgreSQL [won't support any form of unsigned integers](https://www.postgresql.org/message-id/CAEcSYX+Arn7y4FeYPp6ZgbiiiMfZYmsn9aUyotZB-MA1n5hTOw@mail.gmail.com). However, you can still use any `uint` variants with a drawback: **they will be stored in raw binary form instead of normal integer**. Thus, PostgreSQL-side `uint` comparison is impossible; you have to compare them in your Go application. MySQL, MariaDB, and SQLite are unaffected by this issue.
 
 # How to Use?
 
-Very easy! first of all, let's install like normal Go packages
+Very easy! First, let's install like normal Go packages:
 
 ```bash
 go get github.com/tee8z/nullable
